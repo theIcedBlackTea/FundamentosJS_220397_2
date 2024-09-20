@@ -6,7 +6,7 @@ html
 body {
 font-size: 1.6rem;
 font-family: 'lato', sans-serif;
-background-color: aqua;
+background-color: rgb(30, 204, 120);
 }
 :before, *:after{
     box-sizing :inherit;
