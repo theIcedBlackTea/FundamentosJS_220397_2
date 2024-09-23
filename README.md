@@ -11,6 +11,7 @@ un par de practicas de reporte de JavaScript puro, con el objetivo de confirmar 
 |1. | Metodologia de Evaluacion|| ✅Finalizada|
 |2. | Inicializacion del Proyecto||✅😆Activo|
 |3. | Declaracion de variables en JS||Activo 😊|
+|4. | Tipos de Datos en JS|por Definir|No concluido|
 *
 ### Autor
 Creado por : *Daniel de Jesús Bravo Godínez* /[@theIcedBlackTea](https://github.com/theIcedBlackTea)
