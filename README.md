@@ -8,10 +8,11 @@ un par de practicas de reporte de JavaScript puro, con el objetivo de confirmar 
 ## Historial de practicas
 |No.|Descripción| Potenciador| Estatus|
 |--|--|--|--|
-|1. | Metodologia de Evaluacion|| ✅Finalizada|
-|2. | Inicializacion del Proyecto||✅😆Activo|
-|3. | Declaracion de variables en JS||Activo 😊|
-|4. | Tipos de Datos en JS|por Definir|No concluido|
+|1. | Metodologia de Evaluacion|1| ✅Finalizada|
+|2. | Inicializacion del Proyecto deFundamentos JS|5|✅Finalizada|
+|3. | Declaracion de variables en (Undefined/Boolean/Number)|10|✅Finalizado|
+|4. | Declaracion de variables en (String/BigInt/Symbol/Null/Function)|6|✅Finalizado|
+|5. | Introduccción a Objetos|Por Definir| Activa|
 *
 ### Autor
 Creado por : *Daniel de Jesús Bravo Godínez* /[@theIcedBlackTea](https://github.com/theIcedBlackTea)
