@@ -44,6 +44,7 @@ console.log(`Los datos del PRODUCTO son: \n"
 
     let Producto =
     {
+        ID: 3216,
         Nombre : "Tenis Deportivos",
         Marca: "Nikes",
         Modelo: "Jordan '24",
@@ -107,6 +108,7 @@ console.log(`Los datos del PRODUCTO son: \n"
 
     let Pedido = 
     {
+        ID: 5816,
         Producto_Clave: 316,
         Comprador_Clave: 3216,
         Cantidad: 2,
@@ -181,3 +183,116 @@ console.log(`Los datos del PRODUCTO son: \n"
     delete Pedido.TipoPago;
     console.log("Después de la modificación");
     console.table(Pedido);
+
+    console.log("%c7. - Métodos para controlar la mutabilidad de los objetos. CONGELACIÓN (FREEZE)", style_console);
+    
+    //Si queremos no permitir que los objetos no sean modificados ni en estructura, ni en valor, usamos el método FREEZE (congelar)
+    console.log(`La estructura del comprador es: `);
+    console.table(Comprador);
+    Object.freeze(Comprador);
+    //Intentamos agregar, eliminar o modificar los valores de sus propiedades
+
+    Comprador.FechaUltimaCompra = "05/09/2024 10:15:25"
+    delete Comprador.Tipo;
+    Comprador.Dirección= "calle 16 Septiembre #102, Col. Manantiales, Huauchinango Puebla";
+    console.log(`Verificamos si se realizaron los cambios en el objeto COMPRADOR: `);
+    console.table(Comprador);
+
+
+    console.log("%c8. - Métodos para controlar la mutabilidad de los objetos. SELLADO (SEAL)", style_console);
+
+    //Sin embargo, en el caso que desemos poder modificar los valores de las propiedades del Objeto, pero no su estructura, usamos SEAL
+    console.log("Objeto antes de ser modificado: ");
+    console.table(Pedido);
+    //Sellamos el objeto
+    Object.seal(Pedido);
+    //Intentamos modificar su estructura
+    Pedido['FechaPedido'] = "25/09/2024 11:05:03"
+    delete Pedido['Cantidad'];
+    console.log('Verificamos si se realizaron los cambios en el Objeto PEDIDO:');
+    console.table(Pedido);
+
+    //Ahora intentamos modificar el valor de las propiedades
+    Pedido.Cantidad = 5
+    console.log('Verificamos si se realizaron los cambios en el Objeto PEDIDO:');
+    console.table(Pedido);
+    //----------------------------------------------------------------------------------RETO: HACER UN OBJETO PARCIALMENTE MUTABLE 
+    /*let Reto = {
+        Descripción: "Crear un objeto parcialmenet mutable",
+        Matricula: 220397
+    },
+        Alumno: Object.freeze({
+            Nombre: "Daniel de Jesús",
+            Apellido: "Bravo Godínez"
+        });
+    console.table(Reto);
+
+    Object.seal(Reto);
+    Object.freeze(Reto.Alumno);
+    Object.freeze(Reto.Matricula)
+    Reto.Descripción = "CREO YO QUE SALIÓ ESTE ROLLO"; 
+    Reto.Alumno = "Diego Mota"; 
+    Reto.Matricula = 230569; 
+
+    console.log('Mando a invocar Objeto Reto:');
+    console.table(Reto);*/
+    //-----------------------------------------------------------------------------------
+
+    //Desestructuración de 2 o más Objetos
+    console.log("%c9. - Desestructuración de 2 o más Objetos", style_console);
+    let {Precio: productoPrecio, Marca: productoMarca} = Producto
+    let {Correo: clienteCorreo, PaisOrigen: clientePais, SaldoActual: clienteSaldo, Tipo: clienteTipo} = Comprador
+
+    //Transformamos valores cuantitativos en cualitativos
+    if(productoPrecio = 2000)
+        productoPrecio = "caro"
+    else
+        productoPrecio = "Barato"
+
+    if(clienteSaldo > 0)
+        clienteSaldo = "A favor"
+    else if(clienteSaldo < 0)
+        clienteSaldo = "En contra"
+    else
+        clienteSaldo = "Sin deudas"
+
+    //Transformar valores cualitativos en cuantitativos
+    let ClienteNivel;
+
+    if(clienteTipo == "Premium")
+        ClienteNivel = 1
+    if(clienteTipo == "Premium")
+        ClienteNivel = 2
+    if(clienteTipo == "No identificado")
+        ClienteNivel = 3
+
+    //Clasificamos al cliente por su PAIS DE ORIGEN
+    if(clientePais == "México")
+        clientePais = "Nacional"
+    else
+        clientePais="Extranjero"
+
+
+    //OLE - Object Literal Enhacement
+
+    let datosClientePromociones ={clienteCorreo, clientePais, ClienteNivel, clienteSaldo, productoMarca, productoPrecio}
+
+    //El nuevo objeto que creamos sería un ejempolo de la información que enviaremos al área de Marketing para la difusión de promociones
+    console.log("Los datos del cliente y sus hábitos de compra son: ");
+    console.table(datosClientePromociones);
+    
+
+    //Operaciones sobre Objetos
+    //Unión de Objetos
+    console.log("%c10.- Unión de Objetos usando el método de asignación (ASSING)", style_console);
+
+    console.log("Imprimimos la estructura y valores del Objeto PRODUCTO");
+    console.table(Producto  );
+    console.log("Imprimimos la estructura y valores del Objeto PEDIDO");
+    console.table(Pedido);
+    //Suponiendo que el usuario ya realizó el pago el pedido se convertira en una VENTA que requiere información de ambos objetos
+    const Venta = Object.assign(Producto, Pedido);
+    console.log("Consultamos este nuevo objeto VENTA");
+    console.table(Venta);
+    
+    
