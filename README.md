@@ -12,7 +12,8 @@ un par de practicas de reporte de JavaScript puro, con el objetivo de confirmar 
 |2. | Inicializacion del Proyecto deFundamentos JS|5|✅Finalizada|
 |3. | Declaracion de variables en (Undefined/Boolean/Number)|10|✅Finalizado|
 |4. | Declaracion de variables en (String/BigInt/Symbol/Null/Function)|6|✅Finalizado|
-|5. | Introduccción a Objetos|Por Definir| Activa|
+|5. | Introduccción a Objetos|19|✅Finalizado|
+|6. | Ejercicio 04: Arreeglos|18|Activa|
 *
 ### Autor
 Creado por : *Daniel de Jesús Bravo Godínez* /[@theIcedBlackTea](https://github.com/theIcedBlackTea)
